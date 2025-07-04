@@ -1,6 +1,6 @@
 🩺 GrowMyTherapy – Therapist Website Clone
 🔗 Live Demo: https://growmytherapy-eight.vercel.app
-📦 GitHub Repo: Private or not yet published (You can update this when it's available)
+
 
 📄 Overview
 This project is a modern, responsive therapist website inspired by drjenniferhahm.com. Built with Next.js 14 App Router and Tailwind CSS, it delivers a clean, accessible, and SEO-friendly frontend for psychologists, therapists, and wellness professionals. The goal is to showcase credibility, offer essential service information, and encourage potential clients to reach out via a clear call-to-action.
@@ -25,7 +25,7 @@ Framework: Next.js 14 (App Router)
 
 Styling: Tailwind CSS
 
-Forms & Validation: React Hook Form + Yup
+
 
 Hosting: Vercel
 
