@@ -11,7 +11,7 @@ const Hero = () => {
           Welcome to
         </h1>
 
-        <h2 className="font-lexend rounded-[10px] border-2 border-[#8873EF] px-[15px] py-[10px] text-[#8873EF] text-[16px] font-bold w-fit">
+        <h2 className="font-lexend rounded-[10px] border-2 border-[#8873EF] px-[15px] py-[10px] text-[#8873EF] text-[16px] font-bold w-1/4 text-center">
           Dr. Serena Blake, PsyD
         </h2>
 
