@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🩺 GrowMyTherapy – Therapist Website Clone
+🔗 Live Demo: https://growmytherapy-eight.vercel.app
+📦 GitHub Repo: Private or not yet published (You can update this when it's available)
 
-## Getting Started
+📄 Overview
+This project is a modern, responsive therapist website inspired by drjenniferhahm.com. Built with Next.js 14 App Router and Tailwind CSS, it delivers a clean, accessible, and SEO-friendly frontend for psychologists, therapists, and wellness professionals. The goal is to showcase credibility, offer essential service information, and encourage potential clients to reach out via a clear call-to-action.
 
-First, run the development server:
+⚙️ Features
+🖼️ Hero Section with profile image and introductory bio
 
-```bash
+📖 About section detailing experience and therapy style
+
+💼 Services offered with descriptions
+
+❓ FAQs with collapsible answers (accordion)
+
+📬 Contact Form with form validation and structured layout
+
+🌐 Responsive Design for desktop, tablet, and mobile views
+
+⚡ Optimized with Next.js App Router and Tailwind utilities
+
+🛠️ Technologies Used
+Framework: Next.js 14 (App Router)
+
+Styling: Tailwind CSS
+
+Forms & Validation: React Hook Form + Yup
+
+Hosting: Vercel
+
+💻 Getting Started
+To run this project locally:
+
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/doctor-website.git
+cd doctor-website
+Install dependencies:
+
+bash
+Copy
+Edit
+npm install
+Run the development server:
+
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧪 Folder Structure (App Router)
+bash
+Copy
+Edit
+src/
+│
+├── app/
+│   ├── layout.js
+│   ├── page.js (Home)
+│   ├── components/
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   ├── FAQ.jsx
+│   │   └── ContactForm.jsx
+│
+├── styles/
+│   └── globals.css
+├── public/
+│   └── Assets/
+└── utils/
+    └── validationSchema.js
+📬 Contact
+For feedback, questions, or collaboration opportunities, feel free to reach out:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📧 Email: lokeshsattimsetti@gmail.com
