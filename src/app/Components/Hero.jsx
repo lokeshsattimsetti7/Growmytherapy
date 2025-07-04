@@ -11,9 +11,10 @@ const Hero = () => {
           Welcome to
         </h1>
 
-        <h2 className="font-lexend rounded-[10px] border-2 border-[#8873EF] px-[15px] py-[10px] text-[#8873EF] text-[16px] font-bold w-1/4 text-center">
-          Dr. Serena Blake, PsyD
-        </h2>
+     <h2 className="font-lexend rounded-[10px] border-2 border-[#8873EF] px-[15px] py-[10px] text-[#8873EF] text-[14px] sm:text-[15px] md:text-[16px] font-bold w-full sm:w-1/2 md:w-1/3 lg:w-1/4 text-center">
+  Dr. Serena Blake, PsyD
+</h2>
+
 
         <h3 className="text-[24px] sm:text-[32px] md:text-[44px] lg:text-[56px] xl:text-[70px] leading-tight text-black font-lato font-bold">
           Specialist in anxiety relief, relationship healing, and trauma
