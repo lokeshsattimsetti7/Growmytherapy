@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import phone from "../../Assets/bxs_phone-call.png";
 import location from "../../Assets/ic_sharp-email (1).png";
@@ -9,6 +10,64 @@ import circle from "../../Assets/Frame 110.png";
 import facebook from "../../Assets/Frame 109.png";
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+    preferred_time: "",
+    consent: false,
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const payload = new FormData();
+    Object.entries(formData).forEach(([key, value]) =>
+      payload.append(key, value)
+    );
+
+    try {
+      const response = await fetch("https://formspree.io/f/xovwbzzd", {
+        method: "POST",
+        body: payload,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          message: "",
+          preferred_time: "",
+          consent: false,
+        });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      alert("Error submitting form.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="Padding flex flex-col lg:flex-row justify-between gap-[60px] bg-[#EEEEEE] font-[lato]">
       {/* Left Section */}
@@ -46,64 +105,81 @@ const ContactForm = () => {
 
       {/* Form Section */}
       <div className="w-full lg:max-w-[50%]">
-        <form
-          action="https://docs.google.com/forms/d/e/1FAIpQLSd-1Dh4-wg9LbXqGeuY44Uvi6x6Ia2QGttGycrq2ipVpT7OLA/formResponse"
-          method="POST"
-          target="_blank"
-          className="flex flex-col gap-[20px] w-full"
-        >
-          <input
-            name="entry.1055094210"
-            type="text"
-            placeholder="Full name"
-            required
-            className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
-          />
-          <input
-            name="entry.1589330120"
-            type="tel"
-            placeholder="Phone number"
-            required
-            className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
-          />
-          <input
-            name="entry.31582027"
-            type="email"
-            placeholder="Email"
-            required
-            className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
-          />
-          <textarea
-            name="entry.889202189"
-            placeholder="What brings you here?"
-            rows={5}
-            required
-            className="w-full h-[160px] sm:h-[190px] px-[15px] py-[10px] bg-white rounded shadow-sm outline-none resize-none"
-          />
-          <input
-            name="entry.244831634"
-            type="text"
-            placeholder="Preferred time to reach you"
-            className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
-          />
-
-          <label className="flex items-start sm:items-center gap-3 text-[#757575] text-[16px] sm:text-[18px]">
-            <input
-              name="entry.1501888128"
-              type="checkbox"
-              className="mt-1 sm:mt-0"
-              required
-            />
-            I agree to be contacted
-          </label>
-
-          <button
-            type="submit"
-            className="button w-full sm:w-[200px] bg-[#8873EF] text-white py-[12px] rounded hover:opacity-90 transition font-semibold text-[16px]"
+        {submitted ? (
+          <div className="bg-white p-6 rounded shadow text-center text-green-600 text-xl font-semibold">
+            ✅ Thank you! Your message has been submitted successfully.
+          </div>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-[20px] w-full"
           >
-            Send Message
-          </button>
-        </form>
+            <input
+              name="name"
+              type="text"
+              placeholder="Full name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
+            />
+            <input
+              name="phone"
+              type="tel"
+              placeholder="Phone number"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
+            />
+            <textarea
+              name="message"
+              placeholder="What brings you here?"
+              rows={5}
+              required
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full h-[160px] sm:h-[190px] px-[15px] py-[10px] bg-white rounded shadow-sm outline-none resize-none"
+            />
+            <input
+              name="preferred_time"
+              type="text"
+              placeholder="Preferred time to reach you"
+              value={formData.preferred_time}
+              onChange={handleChange}
+              className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
+            />
+
+            <label className="flex items-start sm:items-center gap-3 text-[#757575] text-[16px] sm:text-[18px]">
+              <input
+                name="consent"
+                type="checkbox"
+                required
+                checked={formData.consent}
+                onChange={handleChange}
+                className="mt-1 sm:mt-0"
+              />
+              I agree to be contacted
+            </label>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="button w-full sm:w-[200px] bg-[#8873EF] text-white py-[12px] rounded hover:opacity-90 transition font-semibold text-[16px]"
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );
