@@ -159,7 +159,7 @@ const ContactForm = () => {
               className="w-full h-[60px] sm:h-[70px] px-[15px] bg-white rounded shadow-sm outline-none"
             />
 
-            <label className="flex items-start sm:items-center gap-3 text-[#757575] text-[16px] sm:text-[18px]">
+            <label className="flex items-center sm:items-center gap-3 text-[#757575] text-[16px] sm:text-[18px]">
               <input
                 name="consent"
                 type="checkbox"
