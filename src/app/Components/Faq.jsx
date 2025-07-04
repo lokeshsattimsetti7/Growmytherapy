@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 
 const faqData = [
@@ -58,6 +58,7 @@ const faqData = [
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
   const [mounted, setMounted] = useState(false);
+  const contentRefs = useRef([]);
 
   useEffect(() => {
     setMounted(true);
@@ -75,7 +76,7 @@ export default function Faq() {
         Frequently Asked Questions
       </h2>
 
-      <div className="flex flex-col gap-[16px] w-full max-w-[1000px] mx-auto">
+      <div className="flex flex-col gap-[25px] w-full max-w-[1000px] mx-auto">
         {faqData.map((item, index) => (
           <div key={index} className="border-b border-gray-200 overflow-hidden">
             <button
@@ -93,11 +94,16 @@ export default function Faq() {
             </button>
 
             <div
-              className={`px-5 overflow-hidden transition-all duration-500 ease-in-out ${
-                openIndex === index ? "max-h-[500px] py-4" : "max-h-0"
-              }`}
+              ref={(el) => (contentRefs.current[index] = el)}
+              style={{
+                maxHeight:
+                  openIndex === index
+                    ? `${contentRefs.current[index]?.scrollHeight}px`
+                    : "0px",
+              }}
+              className="px-5 overflow-hidden transition-all duration-500 ease-in-out"
             >
-              <p className="text-[16px] sm:text-[18px] leading-[28px] text-[#757575]">
+              <p className="text-[16px] sm:text-[18px] leading-[28px] text-[#757575] py-4">
                 {item.answer}
               </p>
             </div>
