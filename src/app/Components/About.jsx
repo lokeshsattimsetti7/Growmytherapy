@@ -14,7 +14,7 @@ const Hero = () => {
           className="w-full h-auto max-w-[500px]"
         />
       </div>
-      <div className="flex flex-col gap-[20px] max-w-full lg:max-w-[50%]">
+      <div className="flex flex-col gap-[40px] max-w-full lg:max-w-[50%]">
         <h1 className="flex items-center text-[24px] sm:text-[30px] md:text-[35px] leading-[1.2] tracking-tight font-bold font-lato gap-[10px]">
           Dr. Serena Blake{" "}
           <Image src={logo} alt="logo" width={28} height={28} />
