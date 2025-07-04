@@ -1,81 +1,44 @@
-🩺 GrowMyTherapy – Therapist Website Clone
-🔗 Live Demo: https://growmytherapy-eight.vercel.app
+# 🩺 GrowMyTherapy – Therapist Website Clone
+
+**🔗 Live Demo:** [https://growmytherapy-eight.vercel.app](https://growmytherapy-eight.vercel.app)  
 
 
-📄 Overview
-This project is a modern, responsive therapist website inspired by drjenniferhahm.com. Built with Next.js 14 App Router and Tailwind CSS, it delivers a clean, accessible, and SEO-friendly frontend for psychologists, therapists, and wellness professionals. The goal is to showcase credibility, offer essential service information, and encourage potential clients to reach out via a clear call-to-action.
+---
 
-⚙️ Features
-🖼️ Hero Section with profile image and introductory bio
+## 📄 Overview
 
-📖 About section detailing experience and therapy style
+This project is a modern, responsive therapist website inspired by [drjenniferhahm.com](https://drjenniferhahm.com). Built using **Next.js 14 App Router** and **Tailwind CSS**, the site offers a professional frontend design for therapists, psychologists, and wellness practitioners. It emphasizes clean layout, accessibility, and a user-friendly experience with clear calls to action for booking appointments or reaching out.
 
-💼 Services offered with descriptions
+---
 
-❓ FAQs with collapsible answers (accordion)
+## ⚙️ Features
 
-📬 Contact Form with form validation and structured layout
+* 🖼️ Hero section with profile image, credentials, and intro
+* 🧠 About section with background and therapy philosophy
+* 🛠️ Services block for listing therapy types and benefits
+* ❓ FAQ accordion using interactive toggle UI
+* 📬 Contact form with form validation using React Hook Form + Yup
+* 🌐 Fully responsive across mobile, tablet, and desktop
+* ⚡ Built using the new App Router in Next.js 14
+* 🚀 Deployed and hosted on Vercel
 
-🌐 Responsive Design for desktop, tablet, and mobile views
+---
 
-⚡ Optimized with Next.js App Router and Tailwind utilities
+## 🛠️ Technologies Used
 
-🛠️ Technologies Used
-Framework: Next.js 14 (App Router)
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Hosting:** Vercel
+- **Icons:** Lucide React
 
-Styling: Tailwind CSS
+---
 
+## 💻 Getting Started
 
+To set up and run the project locally:
 
-Hosting: Vercel
+### 1. Clone the repository
 
-💻 Getting Started
-To run this project locally:
-
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/your-username/doctor-website.git
-cd doctor-website
-Install dependencies:
-
-bash
-Copy
-Edit
-npm install
-Run the development server:
-
-bash
-Copy
-Edit
-npm run dev
-Visit http://localhost:3000 in your browser.
-
-🧪 Folder Structure (App Router)
-bash
-Copy
-Edit
-src/
-│
-├── app/
-│   ├── layout.js
-│   ├── page.js (Home)
-│   ├── components/
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Services.jsx
-│   │   ├── FAQ.jsx
-│   │   └── ContactForm.jsx
-│
-├── styles/
-│   └── globals.css
-├── public/
-│   └── Assets/
-└── utils/
-    └── validationSchema.js
-📬 Contact
-For feedback, questions, or collaboration opportunities, feel free to reach out:
-
-📧 Email: lokeshsattimsetti@gmail.com
+```bash
+git clone https://github.com/lokeshsattimsetti7/growmytherapy-clone.git
+cd growmytherapy-clone
